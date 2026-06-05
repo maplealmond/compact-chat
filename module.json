@@ -1,0 +1,19 @@
+{
+  "id": "compact-chat",
+  "title": "Compact Chat",
+  "description": "A module to make the chatlog compact and easy",
+  "version": "1.0.1",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "maplealmond",
+      "email": "maplealmond@gmail.com"
+    }
+  ],
+  "styles": [
+    "styles/compact-chat.css"
+  ]
+}

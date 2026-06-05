@@ -1,0 +1,24 @@
+#sidebar-content #chat {
+  background: var(--sidebar-background, var(--color-cool-5-90)) !important;
+  max-width: var(--sidebar-width);
+  align-self: flex-end;
+}
+
+#sidebar-tabs {
+  padding: 0 !important;
+  border: none !important;
+}
+
+#sidebar-tabs>menu {
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#sidebar-tabs>menu>li,
+#sidebar-tabs>menu .ui-control {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  /* Maintain square shape */
+  aspect-ratio: 1 / 1;
+}
