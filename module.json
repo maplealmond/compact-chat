@@ -2,7 +2,7 @@
   "id": "compact-chat",
   "title": "Compact Chat",
   "description": "A module to make the chatlog compact and non transparent, like the classic v12 style, but with vertical icons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
