@@ -56,7 +56,7 @@ Hooks.once("setup", () => {
     const label = tabLabel(tab, config);
     game.settings.register(MODULE_ID, settingKey(tab), {
       name: game.i18n.format("COMPACT_CHAT.ShowTabName", { tab: label }),
-      scope: "client",
+      scope: "user",
       config: true,
       type: Boolean,
       default: true,
