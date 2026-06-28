@@ -18,5 +18,15 @@
   "download": "#{DOWNLOAD}#",
   "styles": [
     "styles/compact-chat.css"
+  ],
+  "esmodules": [
+    "scripts/compact-chat.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
   ]
 }
