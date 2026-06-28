@@ -1,3 +1,7 @@
 {
+  "COMPACT_CHAT.StyleSectionHeader": "Sidebar Styling",
+  "COMPACT_CHAT.CompactTabsName": "Compact sidebar tabs",
+  "COMPACT_CHAT.CompactTabsHint": "Remove the gaps, margins, and borders between sidebar tab icons for a tighter, square layout.",
+  "COMPACT_CHAT.TabSectionHeader": "Show/Hide Tabs",
   "COMPACT_CHAT.ShowTabName": "Show {tab} tab"
 }

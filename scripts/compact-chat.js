@@ -1,36 +1,17 @@
-const MODULE_ID = "compact-chat";
+import {
+  MODULE_ID,
+  COMPACT_TABS_SETTING,
+  getToggleableTabs,
+  settingKey,
+  registerSettings,
+  installSettingsUI
+} from "./settings.js";
 
 const STYLE_ELEMENT_ID = "compact-chat-hidden-tabs";
+// Body class the CSS keys off of; toggled to match the compact-tabs setting.
+const COMPACT_TABS_CLASS = "compact-chat-compact-tabs";
 
-// We don't want to get rid of these two.  
-// Chat is too core, and settings would lock the user out of changing it.
-const LOCKED_TABS = new Set(["chat", "settings"]);
-
-/**
- * Discover the sidebar tabs that may be toggled, excluding the locked ones.
- * @returns {Array<[string, object]>} Entries of [tabKey, tabConfig].
- */
-function getToggleableTabs() {
-  const tabs = foundry.applications?.sidebar?.Sidebar?.TABS
-  return Object.entries(tabs).filter(([key]) => !LOCKED_TABS.has(key));
-}
-
-function settingKey(tab) {
-  return `show-${tab}`;
-}
-
-function tabLabel(tab, config) {
-  if (config?.tooltip) return game.i18n.localize(config.tooltip);
-  if (config?.documentName) {
-    const cls = getDocumentClass(config.documentName);
-    if (cls?.metadata?.labelPlural) return game.i18n.localize(cls.metadata.labelPlural);
-  }
-  return tab;
-}
-
-/**
- * Rewrite the managed <style> element to hide tabs with setting off.
- */
+// Rewrites the managed <style> element to hide tabs whose setting is off.
 function updateHiddenTabs() {
   const hidden = getToggleableTabs()
     .map(([tab]) => tab)
@@ -51,19 +32,26 @@ function updateHiddenTabs() {
   }
 }
 
+// Toggles the compact-tab body class to match the setting.
+function applyCompactTabs() {
+  const enabled = game.settings.get(MODULE_ID, COMPACT_TABS_SETTING) !== false;
+  document.body.classList.toggle(COMPACT_TABS_CLASS, enabled);
+}
+
+installSettingsUI();
+
 Hooks.once("setup", () => {
-  for (const [tab, config] of getToggleableTabs()) {
-    const label = tabLabel(tab, config);
-    game.settings.register(MODULE_ID, settingKey(tab), {
-      name: game.i18n.format("COMPACT_CHAT.ShowTabName", { tab: label }),
-      scope: "user",
-      config: true,
-      type: Boolean,
-      default: true,
-      onChange: () => updateHiddenTabs()
-    });
-  }
+  registerSettings({
+    onCompactTabsChange: applyCompactTabs,
+    onShowTabChange: updateHiddenTabs
+  });
+
+  // Apply before the sidebar first renders to avoid a layout flash.
+  applyCompactTabs();
 });
 
-Hooks.once("ready", () => updateHiddenTabs());
+Hooks.once("ready", () => {
+  applyCompactTabs();
+  updateHiddenTabs();
+});
 Hooks.on("renderSidebar", () => updateHiddenTabs());

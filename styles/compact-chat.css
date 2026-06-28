@@ -4,19 +4,21 @@
   align-self: flex-end;
 }
 
-#sidebar-tabs {
+/* Compact sidebar tabs — only applied when the "compact-tabs" setting is enabled,
+   via the body class toggled in scripts/compact-chat.js. */
+body.compact-chat-compact-tabs #sidebar-tabs {
   padding: 0 !important;
   border: none !important;
 }
 
-#sidebar-tabs>menu {
+body.compact-chat-compact-tabs #sidebar-tabs>menu {
   gap: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-#sidebar-tabs>menu>li,
-#sidebar-tabs>menu .ui-control {
+body.compact-chat-compact-tabs #sidebar-tabs>menu>li,
+body.compact-chat-compact-tabs #sidebar-tabs>menu .ui-control {
   border-radius: 0 !important;
   margin: 0 !important;
   /* Maintain square shape */
