@@ -2,7 +2,7 @@
   "id": "compact-chat",
   "title": "Compact Chat",
   "description": "A module to make the chatlog compact and non transparent, like the classic v12 style, but with vertical icons",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -15,7 +15,7 @@
   ],
   "url": "https://github.com/maplealmond/compact-chat",
   "manifest": "https://github.com/maplealmond/compact-chat/releases/latest/download/module.json",
-  "download": "https://github.com/maplealmond/compact-chat/releases/download/v1.0.1/module.zip",
+  "download": "https://github.com/maplealmond/compact-chat/releases/download/v1.0.5/module.zip",
   "styles": [
     "styles/compact-chat.css"
   ]
