@@ -1,6 +1,4 @@
 export const MODULE_ID = "compact-chat";
-
-// Setting that toggles the compact (zero gap/margin/border) sidebar tab styling.
 export const COMPACT_TABS_SETTING = "compact-tabs";
 
 // We don't want to get rid of these two.
@@ -36,7 +34,6 @@ function tabLabel(tab, config) {
  * @param {() => void} handlers.onShowTabChange      Fired when any per-tab toggle changes.
  */
 export function registerSettings({ onCompactTabsChange, onShowTabChange }) {
-  // Registered first so it appears at the top of the module's settings list.
   game.settings.register(MODULE_ID, COMPACT_TABS_SETTING, {
     name: game.i18n.localize("COMPACT_CHAT.CompactTabsName"),
     hint: game.i18n.localize("COMPACT_CHAT.CompactTabsHint"),
@@ -59,8 +56,6 @@ export function registerSettings({ onCompactTabsChange, onShowTabChange }) {
   }
 }
 
-// Inserts a labeled section divider before a form-group, unless one is already there
-// (guards against duplicates when the settings window re-renders).
 function insertDivider(formGroup, labelKey) {
   if (!formGroup || formGroup.previousElementSibling?.classList.contains("compact-chat-divider")) return;
   const divider = document.createElement("h3");
@@ -69,9 +64,6 @@ function insertDivider(formGroup, labelKey) {
   formGroup.before(divider);
 }
 
-/**
- * Group the module's settings under section dividers in the settings UI.
- */
 export function installSettingsUI() {
   Hooks.on("renderSettingsConfig", (app, element) => {
     const root = element instanceof HTMLElement ? element : element?.[0];

@@ -8,7 +8,6 @@ import {
 } from "./settings.js";
 
 const STYLE_ELEMENT_ID = "compact-chat-hidden-tabs";
-// Body class the CSS keys off of; toggled to match the compact-tabs setting.
 const COMPACT_TABS_CLASS = "compact-chat-compact-tabs";
 
 // Rewrites the managed <style> element to hide tabs whose setting is off.
@@ -46,7 +45,6 @@ Hooks.once("setup", () => {
     onShowTabChange: updateHiddenTabs
   });
 
-  // Apply before the sidebar first renders to avoid a layout flash.
   applyCompactTabs();
 });
 

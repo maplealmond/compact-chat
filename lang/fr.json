@@ -1,0 +1,7 @@
+{
+  "COMPACT_CHAT.StyleSectionHeader": "Style de la barre latérale",
+  "COMPACT_CHAT.CompactTabsName": "Onglets compacts de la barre latérale",
+  "COMPACT_CHAT.CompactTabsHint": "Supprime les espaces, marges et bordures entre les icônes des onglets de la barre latérale pour une disposition plus compacte et carrée.",
+  "COMPACT_CHAT.TabSectionHeader": "Afficher/Masquer les onglets",
+  "COMPACT_CHAT.ShowTabName": "Afficher l'onglet {tab}"
+}
