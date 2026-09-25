@@ -1,7 +1,7 @@
 {
   "id": "compact-chat",
   "title": "Compact Chat",
-  "description": "A module to make the chatlog compact and non transparent, like the classic v12 style, but with vertical icons",
+  "description": "A module to make the sidebar tabs compact and hide unused tabs",
   "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "14",

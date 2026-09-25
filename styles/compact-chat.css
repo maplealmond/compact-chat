@@ -1,9 +1,3 @@
-#sidebar-content #chat {
-  background: var(--sidebar-background, var(--color-cool-5-90)) !important;
-  max-width: var(--sidebar-width);
-  align-self: flex-end;
-}
-
 /* Compact sidebar tabs — only applied when the "compact-tabs" setting is enabled,
    via the body class toggled in scripts/compact-chat.js. */
 body.compact-chat-compact-tabs #sidebar-tabs {
